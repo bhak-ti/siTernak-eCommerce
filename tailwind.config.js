@@ -384,6 +384,7 @@ module.exports = {
     height: (theme) => ({
       auto: "auto",
       ...theme("spacing"),
+      92: "22rem",
       "1/2": "50%",
       "1/3": "33.333333%",
       "30%": "30%",
@@ -966,5 +967,5 @@ module.exports = {
     wordBreak: ["responsive"],
     zIndex: ["responsive", "focus-within", "focus"],
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
