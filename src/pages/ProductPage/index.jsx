@@ -8,7 +8,6 @@ import Radio from "@material-tailwind/react/radio";
 
 const ProductPage = () => {
   const [filterDefault, setFilterDefault] = useState(["All Product"]);
-
   const handleChange = (e, name) => {
     if (filterDefault.includes("All Product")) {
       setFilterDefault([]);
@@ -121,26 +120,17 @@ const ProductPage = () => {
               />
             </div>
             <div
-              className="mt-5 grid justify-between gap-3 gap-y-6"
+              className="mt-5 grid justify-between"
               style={{
                 gridTemplateColumns: "repeat(auto-fit, minmax(12rem, 12rem))",
+                gap: "25px 15px",
               }}
             >
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              {staticConst.stasticCardData.map((el, indx) => (
+                <div key={indx}>
+                  <Card data={el} />
+                </div>
+              ))}
             </div>
           </div>
         </div>

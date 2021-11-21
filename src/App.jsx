@@ -9,7 +9,7 @@ import {
 import Navbar from "./components/Navbar";
 import "@material-tailwind/react/tailwind.css";
 
-const isAuth = false;
+const isAuth = true;
 
 function App() {
   return (

@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "../Dropdown";
 import Input from "../Input";
 import { staticConst } from "../../static/staticConst";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import Modal from "../Modal";
 
 const { categoriesOptions } = staticConst;
 
 const Navbar = () => {
   const navigation = useNavigate();
+  const [handleModal, setHandleModal] = useState(false);
 
   const handleSearch = (e) => {
     const pathname = window.location.pathname;
@@ -17,6 +19,113 @@ const Navbar = () => {
     }
     console.log(e.target.value);
   };
+
+  const loginComponent = (
+    <div className="px-10 py-6 bg-white max-w-max rounded-md __montserat-text">
+      <h1 className="font-bold py-4 text-2xl">Login</h1>
+      <div className="mb-7 mt-4">
+        <div class="mb-3 pt-0 flex flex-col">
+          <label className="text-sm font-medium text-subtitle">
+            Email / no. tlpn
+          </label>
+          <input
+            type="text"
+            class="px-3 mt-2 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm outline-none focus:border-gray-400 focus:outline-none focus:ring-0 border border-gray-200"
+            style={{ width: 330 }}
+          />
+          <p className="text-xs text-gray-400 mt-1">
+            Contoh: email@tokopedia.com
+          </p>
+        </div>
+        <div className="flex flex-col">
+          <label className="text-sm font-medium text-subtitle">Password</label>
+          <div>
+            <input
+              type="text"
+              className="px-3 py-3 mt-2 placeholder-blueGray-300 text-blueGray-600 relative bg-white rounded text-sm border border-gray-200 outline-none focus:outline-none focus:ring-0 pl-20 focus:border-gray-400"
+              style={{ width: 330 }}
+            />
+          </div>
+        </div>
+        <div className=" flex justify-between items-center mt-3">
+          <span></span>
+          <span className="text-xs text-textDefault mt-1">
+            Lupa Kata Sandi ?
+          </span>
+        </div>
+
+        <div className="flex flex-col justify-center mt-9 items-center">
+          <button className="ml-2 w-full flex justify-center bg-gray-800 hover:text-gray-100 transition hover:border-textDefault items-center text-sm font-medium text-white py-2.5 px-3 border rounded">
+            Masuk
+          </button>
+        </div>
+        <p className="mt-5 text-xs text-subtitle text-center">
+          Butuh bantuan?{" "}
+          <span className="text-warning">Hubungi ITernak Care</span>
+        </p>
+      </div>
+    </div>
+  );
+
+  const RegisterComponent = (
+    <div className="px-10 py-6 bg-white max-w-max rounded-md __montserat-text">
+      <h1 className="font-bold pt-4 text-2xl text-center">Register</h1>
+      <p className="text-xs text-subtitle text-center">
+        Sudah Punya Akun? <span className="text-warning">Masuk</span>
+      </p>
+      <div className="mb-7 mt-7">
+        <div class="mb-3 pt-0 flex flex-col">
+          <label className="text-sm font-medium text-subtitle">Nama</label>
+          <div className="grid grid-flow-col gap-x-3">
+            <input
+              type="text"
+              class="px-3 mt-2 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm outline-none focus:border-gray-400 focus:outline-none focus:ring-0 border border-gray-200"
+              style={{ width: 160 }}
+              placeholder="Nama Depan"
+            />
+            <input
+              type="text"
+              class="px-3 mt-2 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm outline-none focus:border-gray-400 focus:outline-none focus:ring-0 border border-gray-200"
+              style={{ width: 160 }}
+              placeholder="Nama Belakang"
+            />
+          </div>
+        </div>
+        <div class="mb-3 pt-0 flex flex-col">
+          <label className="text-sm font-medium text-subtitle">
+            Email / no. tlpn
+          </label>
+          <input
+            type="text"
+            class="px-3 mt-2 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm outline-none focus:border-gray-400 focus:outline-none focus:ring-0 border border-gray-200"
+            style={{ width: 330 }}
+          />
+          <p className="text-xs text-gray-400 mt-1">
+            Contoh: email@tokopedia.com
+          </p>
+        </div>
+        <div className="flex flex-col">
+          <label className="text-sm font-medium text-subtitle">Password</label>
+          <div>
+            <input
+              type="text"
+              className="px-3 py-3 mt-2 placeholder-blueGray-300 text-blueGray-600 relative bg-white rounded text-sm border border-gray-200 outline-none focus:outline-none focus:ring-0 pl-20 focus:border-gray-400"
+              style={{ width: 330 }}
+            />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center mt-9 items-center">
+          <button className="ml-2 w-full flex justify-center bg-gray-800 hover:text-gray-100 transition hover:border-textDefault items-center text-sm font-medium text-white py-2.5 px-3 border rounded">
+            Daftar
+          </button>
+        </div>
+        <p className="mt-5 text-xs text-subtitle text-center">
+          Butuh bantuan?{" "}
+          <span className="text-warning">Hubungi ITernak Care</span>
+        </p>
+      </div>
+    </div>
+  );
 
   return (
     <div className="w-screen shadow-md bg-white fixed z-20 overflow-hidden">
@@ -37,7 +146,7 @@ const Navbar = () => {
               1
             </span>
           </div>
-          <div>
+          <div onClick={() => setHandleModal(true)}>
             <img
               src="/assets/Untitled designrandoongrokgfn354tygregghehwerergerg.png"
               alt="profile_picture"
@@ -46,6 +155,11 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <Modal
+        isOpen={handleModal}
+        component={RegisterComponent}
+        handleClose={() => setHandleModal(false)}
+      />
     </div>
   );
 };

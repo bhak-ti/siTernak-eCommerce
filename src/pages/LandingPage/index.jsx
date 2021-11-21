@@ -2,6 +2,7 @@ import React from "react";
 import Carrousel from "../../components/Carousel";
 import Card from "../../components/Card";
 import Header from "../../components/Header";
+import { staticConst } from "../../static/staticConst";
 
 const LandingPage = () => {
   return (
@@ -15,20 +16,17 @@ const LandingPage = () => {
         <div className="mycontainer mobile:mycontainerfull min-h-screen">
           <Header title="Today's Offer" subTitle="Get the best offer from us" />
           <div
-            className="mt-12 grid justify-between gap-3 gap-y-6"
+            className="mt-12 grid justify-between"
             style={{
               gridTemplateColumns: "repeat(auto-fit, minmax(12rem, 12rem))",
+              gap: "25px 15px",
             }}
           >
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {staticConst.stasticCardData.map((el, indx) => (
+              <div key={indx}>
+                <Card data={el} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
