@@ -11,18 +11,18 @@ const { categoriesOptions } = staticConst;
 const Navbar = () => {
   const navigation = useNavigate();
   const [handleModal, setHandleModal] = useState(false);
-
-  const handleSearch = (e) => {
-    const pathname = window.location.pathname;
-    if (pathname !== "/product_page") {
-      navigation("/product_page");
-    }
-    console.log(e.target.value);
-  };
-
   const loginComponent = (
     <div className="px-10 py-6 bg-white max-w-max rounded-md __montserat-text">
-      <h1 className="font-bold py-4 text-2xl">Login</h1>
+      <h1 className="font-bold pt-4 text-2xl text-center">Login</h1>
+      <p className="text-xs text-subtitle text-center">
+        Belum Punya Akun?{" "}
+        <span
+          className="text-warning cursor-pointer"
+          onClick={() => setModalComponent(RegisterComponent)}
+        >
+          Register
+        </span>
+      </p>
       <div className="mb-7 mt-4">
         <div class="mb-3 pt-0 flex flex-col">
           <label className="text-sm font-medium text-subtitle">
@@ -49,7 +49,7 @@ const Navbar = () => {
         </div>
         <div className=" flex justify-between items-center mt-3">
           <span></span>
-          <span className="text-xs text-textDefault mt-1">
+          <span className="text-xs mt-1 text-warning cursor-pointer">
             Lupa Kata Sandi ?
           </span>
         </div>
@@ -61,7 +61,9 @@ const Navbar = () => {
         </div>
         <p className="mt-5 text-xs text-subtitle text-center">
           Butuh bantuan?{" "}
-          <span className="text-warning">Hubungi ITernak Care</span>
+          <span className="text-warning cursor-pointer">
+            Hubungi ITernak Care
+          </span>
         </p>
       </div>
     </div>
@@ -71,7 +73,13 @@ const Navbar = () => {
     <div className="px-10 py-6 bg-white max-w-max rounded-md __montserat-text">
       <h1 className="font-bold pt-4 text-2xl text-center">Register</h1>
       <p className="text-xs text-subtitle text-center">
-        Sudah Punya Akun? <span className="text-warning">Masuk</span>
+        Sudah Punya Akun?{" "}
+        <span
+          className="text-warning cursor-pointer"
+          onClick={() => setModalComponent(loginComponent)}
+        >
+          Masuk
+        </span>
       </p>
       <div className="mb-7 mt-7">
         <div class="mb-3 pt-0 flex flex-col">
@@ -121,14 +129,26 @@ const Navbar = () => {
         </div>
         <p className="mt-5 text-xs text-subtitle text-center">
           Butuh bantuan?{" "}
-          <span className="text-warning">Hubungi ITernak Care</span>
+          <span className="text-warning cursor-pointer">
+            Hubungi ITernak Care
+          </span>
         </p>
       </div>
     </div>
   );
 
+  const [modalComponent, setModalComponent] = useState(loginComponent);
+
+  const handleSearch = (e) => {
+    const pathname = window.location.pathname;
+    if (pathname !== "/product_page") {
+      navigation("/product_page");
+    }
+    console.log(e.target.value);
+  };
+
   return (
-    <div className="w-screen shadow-md bg-white fixed z-20 overflow-hidden">
+    <div className="w-screen shadow-md bg-white fixed z-20">
       <div className="mycontainer flex justify-between items-center py-0.5">
         <img src="/assets/logo_si_ternak.png" alt="Logo" className="w-16" />
         <div className="bg-gray-100 rounded grid grid-flow-col divide-x-2 max-w-max p-1">
@@ -140,7 +160,10 @@ const Navbar = () => {
           />
         </div>
         <div className="flex justify-between items-center gap-8">
-          <div className="relative inline-block">
+          <div
+            className="relative inline-block cursor-pointer"
+            onClick={() => navigation("my-cart", { replace: true })}
+          >
             <RiShoppingCartLine className="text-xl mr-4 text-gray-700" />
             <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/4 -translate-y-1/2 bg-red-600 rounded-full">
               1
@@ -157,7 +180,7 @@ const Navbar = () => {
       </div>
       <Modal
         isOpen={handleModal}
-        component={RegisterComponent}
+        component={modalComponent}
         handleClose={() => setHandleModal(false)}
       />
     </div>

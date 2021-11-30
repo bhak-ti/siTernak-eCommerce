@@ -6,6 +6,7 @@ import { GrMoney } from "react-icons/gr";
 import Dropdown from "../../components/Dropdown";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import { TiShoppingCart } from "react-icons/ti";
+import CardSlider from "../../components/CardSlider";
 
 const imageUrl = [
   "https://media.istockphoto.com/photos/rooster-and-hens-free-range-rooster-and-chickens-picture-id1170875829?k=20&m=1170875829&s=612x612&w=0&h=jrCZoKnepJLRoW2VRrG7CRSEExbWEhl-j3EZAS0A2lc=",
@@ -30,11 +31,11 @@ const DetailProduct = () => {
   }, [id]);
 
   return (
-    <div className="__montserat-text text-gray-700">
+    <div className="__montserat-text text-gray-700 mycontainer-sm mobile:mycontainerfull">
       {productData && (
         <div className="mt-12">
           <div
-            className="mycontainer-sm mobile:mycontainerfull grid gap-x-8"
+            className=" grid gap-x-8"
             style={{ gridTemplateColumns: "1fr 2fr 1fr" }}
           >
             <div className="w-96">
@@ -167,19 +168,23 @@ const DetailProduct = () => {
                   className="flex items-center justify-between mt-3 bg-gray-50 border px-3 py-1 rounded-md"
                   style={{ maxWidth: 100 }}
                 >
-                  <AiOutlinePlusCircle
-                    className="text-xl cursor-pointer"
+                  <button
+                    className="border-none focus:ring-0 focus:outline-none"
                     onClick={() =>
                       qty === productData?.quantity
                         ? setQty(qty)
                         : setQty(qty + 1)
                     }
-                  />
+                  >
+                    <AiOutlinePlusCircle className="text-xl cursor-pointer" />
+                  </button>
                   <span>{qty}</span>
-                  <AiOutlineMinusCircle
-                    className="text-xl cursor-pointer"
+                  <button
+                    className="border-none focus:ring-0 focus:outline-none"
                     onClick={() => (qty === 1 ? setQty(qty) : setQty(qty - 1))}
-                  />
+                  >
+                    <AiOutlineMinusCircle className="text-xl cursor-pointer" />
+                  </button>
                 </div>
                 <div className="rounded-md mt-3">
                   <input
@@ -198,7 +203,7 @@ const DetailProduct = () => {
                   </p>
                 </div>
                 <div className="flex flex-col justify-center mt-3 items-center">
-                  <button className="ml-2 bg-transparent w-full flex justify-between hover:text-textDefault transition hover:border-textDefault items-center text-sm font-medium text-subtitle py-2.5 px-3 border rounded">
+                  <button className="ml-2 w-full flex justify-between bg-gray-800 hover:text-gray-100 transition hover:border-textDefault items-center text-sm font-medium text-white py-2.5 px-3 border rounded">
                     Masukan Keranjang
                     <span>
                       <TiShoppingCart className="ml-4 text-xl" />
@@ -208,6 +213,7 @@ const DetailProduct = () => {
               </div>
             </div>
           </div>
+          <CardSlider />
         </div>
       )}
     </div>

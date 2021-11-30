@@ -1,8 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ data }) => {
+  const navigate = useNavigate();
+
+  const handleToDetailPage = () => {
+    navigate("/detail_product/12", { replace: true });
+  };
+
   return (
-    <div className="shadow-lg w-48 h-80 rounded-xl bg-white __montserat-text cursor-pointer">
+    <div
+      className="shadow-lg w-48 h-80 rounded-xl bg-white __montserat-text cursor-pointer"
+      onClick={handleToDetailPage}
+    >
       <img
         src="/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg"
         alt="gambar sapi slurd"

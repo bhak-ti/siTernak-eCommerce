@@ -2,6 +2,7 @@ import LandingPage from "../pages/LandingPage";
 import ProductPage from "../pages/ProductPage";
 import Cart from "../pages/Cart";
 import DetailProduct from "../pages/DetailProduct";
+import Checkout from "../pages/Checkout";
 
 const routeList = [
   {
@@ -30,6 +31,13 @@ const routeList = [
     path: "/my-cart",
     exact: true,
     component: <Cart />,
+    permission: true,
+  },
+  {
+    name: "Checkout Page",
+    path: "/checkout",
+    exact: true,
+    component: <Checkout />,
     permission: true,
   },
 ];
