@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { staticConst } from "../../static/staticConst";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { BsWhatsapp, BsPinMap } from "react-icons/bs";
 import { GrMoney } from "react-icons/gr";
 import Dropdown from "../../components/Dropdown";
@@ -16,6 +17,7 @@ const imageUrl = [
 ];
 
 const DetailProduct = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [productData, setProductData] = useState(null);
   const [showCaseImage, setShowCaseImage] = useState(null);
@@ -203,7 +205,10 @@ const DetailProduct = () => {
                   </p>
                 </div>
                 <div className="flex flex-col justify-center mt-3 items-center">
-                  <button className="ml-2 w-full flex justify-between bg-gray-800 hover:text-gray-100 transition hover:border-textDefault items-center text-sm font-medium text-white py-2.5 px-3 border rounded">
+                  <button
+                    onClick={() => navigate("/my-cart")}
+                    className="ml-2 w-full flex justify-between bg-gray-800 hover:text-gray-100 transition hover:border-textDefault items-center text-sm font-medium text-white py-2.5 px-3 border rounded"
+                  >
                     Masukan Keranjang
                     <span>
                       <TiShoppingCart className="ml-4 text-xl" />

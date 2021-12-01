@@ -3,6 +3,7 @@ import ProductPage from "../pages/ProductPage";
 import Cart from "../pages/Cart";
 import DetailProduct from "../pages/DetailProduct";
 import Checkout from "../pages/Checkout";
+import UserProfile from "../pages/UserProfilePage";
 
 const routeList = [
   {
@@ -38,6 +39,13 @@ const routeList = [
     path: "/checkout",
     exact: true,
     component: <Checkout />,
+    permission: true,
+  },
+  {
+    name: "Dashboard User",
+    path: "/user-profile/:type",
+    exact: true,
+    component: <UserProfile />,
     permission: true,
   },
 ];

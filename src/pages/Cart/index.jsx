@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { staticConst } from "../../static/staticConst";
 import CardItemShop from "../../components/CardItemShop";
+import { useNavigate } from "react-router";
 const data = staticConst.stasticCardData[11];
 
 const Cart = () => {
+  const navigate = useNavigate();
   const [totalQty, setTotalQty] = useState(1);
 
   return (
@@ -49,7 +51,10 @@ const Cart = () => {
                   </div>
                 </div>
                 <div className="flex flex-col justify-center mt-9 items-center">
-                  <button className="w-full flex justify-center bg-gray-800 hover:text-gray-100 transition hover:border-textDefault items-center text-sm font-medium text-white py-2.5 px-3 border rounded">
+                  <button
+                    onClick={() => navigate("/checkout")}
+                    className="w-full flex justify-center bg-gray-800 hover:text-gray-100 transition hover:border-textDefault items-center text-sm font-medium text-white py-2.5 px-3 border rounded"
+                  >
                     Beli
                   </button>
                 </div>

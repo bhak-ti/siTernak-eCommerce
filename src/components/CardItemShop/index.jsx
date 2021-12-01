@@ -2,7 +2,14 @@ import { BsPencil } from "react-icons/bs";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import { useState } from "react";
 
-const CardItemShop = ({ data, plusQty, minQty, qtyOn, onCheckout }) => {
+const CardItemShop = ({
+  data,
+  plusQty,
+  minQty,
+  qtyOn,
+  onCheckout,
+  onTransactionList,
+}) => {
   const [qtyItem, setQtyItem] = useState(1);
 
   return (
@@ -23,12 +30,28 @@ const CardItemShop = ({ data, plusQty, minQty, qtyOn, onCheckout }) => {
             </p>
           </div>
         </div>
-        <button className="ml-2 bg-transparent flex justify-between hover:text-textDefault transition hover:border-textDefault items-center text-sm font-medium text-subtitle py-1.5 px-3 border rounded-full">
-          Edit Barang
-          <span>
-            <BsPencil className="ml-2 text-sm" />
-          </span>
-        </button>
+        {!onTransactionList && !onCheckout && (
+          <button className="ml-2 bg-transparent flex justify-between hover:text-textDefault transition hover:border-textDefault items-center text-sm font-medium text-subtitle py-1.5 px-3 border rounded-full">
+            Edit Barang
+            <span>
+              <BsPencil className="ml-2 text-sm" />
+            </span>
+          </button>
+        )}
+        {onTransactionList && (
+          <div>
+            <div className="text-sm font-medium">
+              <span className="text-warning">Total Belanja</span> : Rp{" "}
+              {Intl.NumberFormat("en-US").format(600000)}
+            </div>
+            <span
+              className="mt-3 mb-1 inline-flex items-center justify-center px-2 py-1 text-xs font-semibold leading-none text-red-100 rounded-full mr-2"
+              style={{ backgroundColor: "#03AC0E" }}
+            >
+              Sedang Dalam Pengiriman
+            </span>
+          </div>
+        )}
       </div>
       {/* for looping item in cart */}
       <div>

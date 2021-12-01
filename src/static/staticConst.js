@@ -54,6 +54,24 @@ export const staticConst = {
       name: "Lion Air",
     },
   ],
+  profile_menu: {
+    seller: [
+      { name: "Dashboard Seller", path: "/user-profile/dashboard_seller" },
+      { name: "Pesanan", path: "/user-profile/pesanan" },
+    ],
+    user: [{ name: "Pesanan", path: "/user-profile/pesanan" }],
+  },
+  userStaticData: {
+    seller: {
+      _id: 12,
+      name: "peternakan pria topi kuning",
+      profile_image: "/seller/image.png",
+      user_desc: "Selamat Datang di peternakan pria bertopi kuning.",
+      no_tlpn: 81222313244,
+      status: 1,
+      birth_date: "16 Juni 1996",
+    },
+  },
   stasticCardData: [
     {
       _id: 1,
@@ -62,6 +80,7 @@ export const staticConst = {
       price: 1000000,
       discount_price: 600000,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
+      quantity: 12,
     },
     {
       _id: 2,
@@ -70,6 +89,7 @@ export const staticConst = {
       price: 1000000,
       discount_price: 600000,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
+      quantity: 12,
     },
     {
       _id: 3,
@@ -78,6 +98,7 @@ export const staticConst = {
       price: 1000000,
       discount_price: 600000,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
+      quantity: 12,
     },
     {
       _id: 4,
@@ -86,11 +107,13 @@ export const staticConst = {
       price: 1000000,
       discount_price: 600000,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
+      quantity: 12,
     },
     {
       _id: 5,
       product_name: "Sapi Lokal Grade A+",
       product_desc: "Ternak kualitas terbaik yang dirawat seperti anak sendiri",
+      quantity: 12,
       price: 1000000,
       discount_price: 600000,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
@@ -100,6 +123,7 @@ export const staticConst = {
       product_name: "Sapi Lokal Grade A+",
       product_desc: "Ternak kualitas terbaik yang dirawat seperti anak sendiri",
       price: 1000000,
+      quantity: 12,
       discount_price: 600000,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
     },
@@ -108,6 +132,7 @@ export const staticConst = {
       product_name: "Sapi Lokal Grade A+",
       product_desc: "Ternak kualitas terbaik yang dirawat seperti anak sendiri",
       price: 1000000,
+      quantity: 12,
       discount_price: 600000,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
     },
@@ -115,6 +140,7 @@ export const staticConst = {
       _id: 8,
       product_name: "Sapi Lokal Grade A+",
       product_desc: "Ternak kualitas terbaik yang dirawat seperti anak sendiri",
+      quantity: 12,
       price: 1000000,
       discount_price: 600000,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
@@ -125,6 +151,7 @@ export const staticConst = {
       product_desc: "Ternak kualitas terbaik yang dirawat seperti anak sendiri",
       price: 1000000,
       discount_price: 600000,
+      quantity: 12,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
     },
     {
@@ -134,6 +161,7 @@ export const staticConst = {
       price: 1000000,
       discount_price: 600000,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
+      quantity: 12,
     },
     {
       _id: 11,
@@ -141,6 +169,7 @@ export const staticConst = {
       product_desc: "Ternak kualitas terbaik yang dirawat seperti anak sendiri",
       price: 1000000,
       discount_price: 600000,
+      quantity: 12,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
     },
     {
@@ -167,6 +196,7 @@ export const staticConst = {
       product_desc: "Ternak kualitas terbaik yang dirawat seperti anak sendiri",
       price: 1000000,
       discount_price: 600000,
+      quantity: 12,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
     },
     {
@@ -175,6 +205,7 @@ export const staticConst = {
       product_desc: "Ternak kualitas terbaik yang dirawat seperti anak sendiri",
       price: 1000000,
       discount_price: 600000,
+      quantity: 12,
       product_image: "/assets/luke-stackpoole-RxHhxWnXmNs-unsplash.jpg",
     },
   ],
