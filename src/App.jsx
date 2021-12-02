@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import "@material-tailwind/react/tailwind.css";
+import Footer from "./components/Footer";
 
 const isAuth = true;
 
@@ -15,7 +16,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <div className="pt-14">
+      <div className="pt-14 min-h-screen">
         <Routes>
           {RouteList.map((el, index) => (
             <Route
@@ -37,6 +38,7 @@ function App() {
           ))}
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }
