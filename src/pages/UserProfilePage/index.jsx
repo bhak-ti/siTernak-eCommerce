@@ -5,7 +5,7 @@ import TransactionList from "./TransactionList";
 import DashboarSeller from "./DashboardSeller";
 
 // status 1 = user biasa, selain itu seller
-const userStatus = 2;
+const userStatus = 1;
 
 const UserProfile = () => {
   let { type } = useParams();
