@@ -1,5 +1,5 @@
-import React from "react";
-import { BsPencil } from "react-icons/bs";
+import React from 'react'
+import { BsPencil } from 'react-icons/bs'
 
 const UserPage = () => {
   return (
@@ -13,11 +13,21 @@ const UserPage = () => {
       </div>
       <div className="flex justify-between border-b-8 border-gray-200 pb-16">
         <div className="flex">
-          <img
-            src="/assets/Untitled designrandoongrokgfn354tygregghehwerergerg.png"
-            alt="profile_pict"
-            className="w-48 h-48 object-cover rounded-md"
-          />
+          <div>
+            <img
+              src="/assets/Untitled designrandoongrokgfn354tygregghehwerergerg.png"
+              alt="profile_pict"
+              className="w-48 h-48 object-cover rounded-md"
+            />
+            <div className="mt-5">
+              <button className="ml-2 bg-transparent flex justify-between hover:text-textDefault transition hover:border-textDefault items-center text-sm font-medium text-subtitle py-1.5 px-3 border rounded-full">
+                Edit Profile
+                <span>
+                  <BsPencil className="ml-2 text-sm" />
+                </span>
+              </button>
+            </div>
+          </div>
           <div className="ml-12">
             <div>
               <div className="font-semibold">Biodata</div>
@@ -26,38 +36,27 @@ const UserPage = () => {
                 <div>James Adam</div>
                 <div>Tanggal Lahir</div>
                 <div>16 Juni 1992</div>
-              </div>
-            </div>
-            <div className="mt-6">
-              <div className="font-semibold">Contact</div>
-              <div className="grid grid-cols-2 gap-x-11 gap-y-4 text-sm text-subtitle mt-3">
                 <div>Email</div>
                 <div>jamesadam@gmail.com</div>
                 <div>no. tlpn</div>
                 <div>+62 8122233424</div>
+                <div>Nama Toko</div>
+                <div>GENTON SHOP</div>
               </div>
             </div>
           </div>
         </div>
-        <div>
-          <button className="ml-2 bg-transparent flex justify-between hover:text-textDefault transition hover:border-textDefault items-center text-sm font-medium text-subtitle py-1.5 px-3 border rounded-full">
-            Edit Profile
-            <span>
-              <BsPencil className="ml-2 text-sm" />
-            </span>
-          </button>
-        </div>
       </div>
       <div className="flex justify-center  mt-10">
         <div className="text-xs text-gray-400 font-medium text-center max-w-screen-sm">
-          Pengguna terdaftar sesuai degan{" "}
+          Pengguna terdaftar sesuai degan{' '}
           <span className="text-warning">syarat dan Kondisi</span> yang berlaku
-          ITernak, apabila membutuhkan bantuan silahkan menghubungi{" "}
-          <span className="text-warning">IternakCare</span>{" "}
+          ITernak, apabila membutuhkan bantuan silahkan menghubungi{' '}
+          <span className="text-warning">IternakCare</span>{' '}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default UserPage;
+export default UserPage
