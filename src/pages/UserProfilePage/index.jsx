@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom";
 import UserPage from "./UserPage";
 import SideMenu from "./SideMenu";
 import TransactionList from "./TransactionList";
-import DashboarSeller from "./DashboardSeller";
+import TabsDashboard from "./TabsDashboard";
+import StorePage from "./StorePage";
 
 // status 1 = user biasa, selain itu seller
 const userStatus = 2;
@@ -20,7 +21,8 @@ const UserProfile = () => {
           <SideMenu userStatus={userStatus} />
         </div>
         {type === "bio" && <UserPage />}
-        {type === "dashboard_seller" && <DashboarSeller />}
+        {type === "bio_seller" && <StorePage />}
+        {type === "pengiriman" && <TabsDashboard />}
         {type === "pesanan" && <TransactionList />}
       </div>
     </div>
