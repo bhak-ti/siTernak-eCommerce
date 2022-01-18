@@ -4,9 +4,11 @@ import SideMenu from "./SideMenu";
 import TransactionList from "./TransactionList";
 import TabsDashboard from "./TabsDashboard";
 import StorePage from "./StorePage";
+import DashboarSeller from "./DashboardSeller";
+import DashboardPages from "./DashboardPages";
 
 // status 1 = user biasa, selain itu seller
-const userStatus = 2;
+const userStatus = 1;
 
 const UserProfile = () => {
   let { type } = useParams();
@@ -23,7 +25,9 @@ const UserProfile = () => {
         {type === "bio" && <UserPage />}
         {type === "bio_seller" && <StorePage />}
         {type === "pengiriman" && <TabsDashboard />}
+        {type === "dashboard_seller" && <DashboarSeller />}
         {type === "pesanan" && <TransactionList />}
+        {type === "dashboard_content" && <DashboardPages />}
       </div>
     </div>
   );

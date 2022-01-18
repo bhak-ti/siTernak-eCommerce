@@ -1,21 +1,23 @@
-import React, { useState } from "react";
-import Dropdown from "../Dropdown";
-import Input from "../Input";
-import { staticConst } from "../../static/staticConst";
-import { RiShoppingCartLine } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
-import Modal from "../Modal";
+import React, { useState } from 'react'
+import Dropdown from '../Dropdown'
+import Input from '../Input'
+import { staticConst } from '../../static/staticConst'
+import { RiShoppingCartLine } from 'react-icons/ri'
+import { CgProfile } from 'react-icons/cg'
+import { MdStorefront } from 'react-icons/md'
+import { useNavigate } from 'react-router-dom'
+import Modal from '../Modal'
 
-const { categoriesOptions } = staticConst;
+const { categoriesOptions } = staticConst
 
 const Navbar = () => {
-  const navigation = useNavigate();
-  const [handleModal, setHandleModal] = useState(false);
+  const navigation = useNavigate()
+  const [handleModal, setHandleModal] = useState(false)
   const loginComponent = (
     <div className="px-10 py-6 bg-white max-w-max rounded-md __montserat-text">
       <h1 className="font-bold pt-4 text-2xl text-center">Login</h1>
       <p className="text-xs text-subtitle text-center">
-        Belum Punya Akun?{" "}
+        Belum Punya Akun?{' '}
         <span
           className="text-warning cursor-pointer"
           onClick={() => setModalComponent(RegisterComponent)}
@@ -60,20 +62,20 @@ const Navbar = () => {
           </button>
         </div>
         <p className="mt-5 text-xs text-subtitle text-center">
-          Butuh bantuan?{" "}
+          Butuh bantuan?{' '}
           <span className="text-warning cursor-pointer">
             Hubungi ITernak Care
           </span>
         </p>
       </div>
     </div>
-  );
+  )
 
   const RegisterComponent = (
     <div className="px-10 py-6 bg-white max-w-max rounded-md __montserat-text">
       <h1 className="font-bold pt-4 text-2xl text-center">Register</h1>
       <p className="text-xs text-subtitle text-center">
-        Sudah Punya Akun?{" "}
+        Sudah Punya Akun?{' '}
         <span
           className="text-warning cursor-pointer"
           onClick={() => setModalComponent(loginComponent)}
@@ -128,29 +130,31 @@ const Navbar = () => {
           </button>
         </div>
         <p className="mt-5 text-xs text-subtitle text-center">
-          Butuh bantuan?{" "}
+          Butuh bantuan?{' '}
           <span className="text-warning cursor-pointer">
             Hubungi ITernak Care
           </span>
         </p>
       </div>
     </div>
-  );
+  )
 
-  const [modalComponent, setModalComponent] = useState(loginComponent);
+  const [modalComponent, setModalComponent] = useState(loginComponent)
 
   const handleSearch = (e) => {
-    const pathname = window.location.pathname;
-    if (pathname !== "/product_page") {
-      navigation("/product_page");
+    const pathname = window.location.pathname
+    if (pathname !== '/product_page') {
+      navigation('/product_page')
     }
-    console.log(e.target.value);
-  };
+    console.log(e.target.value)
+  }
 
   return (
     <div className="w-screen shadow-md bg-white fixed z-20">
       <div className="mycontainer flex justify-between items-center py-0.5">
-        <img src="/assets/logo_si_ternak.png" alt="Logo" className="w-16" />
+        <a href="/">
+          <img src="/assets/logo_si_ternak.png" alt="Logo" className="w-16" />
+        </a>
         <div className="bg-gray-100 rounded grid grid-flow-col divide-x-2 max-w-max p-1">
           <Dropdown noBorder={true} dropdownOpts={categoriesOptions} />
           <Input
@@ -160,9 +164,15 @@ const Navbar = () => {
           />
         </div>
         <div className="flex justify-between items-center gap-8">
+          <div className="relative inline-block cursor-pointer">
+            <MdStorefront className="text-xl" />
+          </div>
+          <div className="relative inline-block cursor-pointer">
+            <CgProfile className="text-xl" />
+          </div>
           <div
             className="relative inline-block cursor-pointer"
-            onClick={() => navigation("my-cart", { replace: true })}
+            onClick={() => navigation('my-cart', { replace: true })}
           >
             <RiShoppingCartLine className="text-xl mr-4 text-gray-700" />
             <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/4 -translate-y-1/2 bg-red-600 rounded-full">
@@ -184,7 +194,7 @@ const Navbar = () => {
         handleClose={() => setHandleModal(false)}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
