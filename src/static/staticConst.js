@@ -1,4 +1,7 @@
 import { GiSheep, GiCow, GiChicken } from 'react-icons/gi'
+import { GrSend, GrCreditCard } from 'react-icons/gr'
+import { RiFileList2Line, RiStore2Line } from 'react-icons/ri'
+import { HiOutlineTag } from 'react-icons/hi'
 
 export const staticConst = {
   categoriesOptions: [
@@ -62,8 +65,9 @@ export const staticConst = {
         {
           menu: {
             title: 'Transaksi',
+            icon: <GrSend />,
             subMenu: [
-              { name: 'Pengiriman', path: '/user-profile/dashboard_seller' },
+              { name: 'Pengiriman', path: '/user-profile/pengiriman#tabs-all' },
               { name: 'Pesanan', path: '/user-profile/pesanan' },
             ],
           },
@@ -71,6 +75,7 @@ export const staticConst = {
         {
           menu: {
             title: 'Produk',
+            icon: <RiFileList2Line />,
             subMenu: [
               { name: 'Produk Saya', path: '/user-profile/my-product' },
               { name: 'Tambah Produk', path: '/user-profile/add-product' },
@@ -80,6 +85,7 @@ export const staticConst = {
         {
           menu: {
             title: 'Promo Saya',
+            icon: <HiOutlineTag />,
             subMenu: [
               { name: 'Promo Saya', path: '/user-profile/my-promo' },
               { name: 'Buat Promo', path: '/user-profile/create-promo' },
@@ -89,6 +95,7 @@ export const staticConst = {
         {
           menu: {
             title: 'Keuangan',
+            icon: <GrCreditCard />,
             subMenu: [
               { name: 'Penghasilan Saya', path: '/user-profile/my-income' },
               { name: 'Saldo Saya', path: '/user-profile/my-belance' },
@@ -100,8 +107,9 @@ export const staticConst = {
         {
           menu: {
             title: 'Toko',
+            icon: <RiStore2Line />,
             subMenu: [
-              { name: 'Profile Toko', path: '/user-profile/bio' },
+              { name: 'Profile Toko', path: '/user-profile/bio_seller' },
               { name: 'Kategori Toko', path: '/user-profile/store-category' },
               { name: 'Penilaian Toko', path: '/user-profile/store-rating' },
               { name: 'Laporan Saya', path: '/user-profile/my-reports' },
